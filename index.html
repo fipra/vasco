@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vita Spericolata - Vasco Rossi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --paper-bg: #fffef0;
+            --ink-color: #2c3e50;
+            --line-color: rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px 15px;
+            font-family: 'Caveat', cursive;
+            overflow-x: hidden;
+        }
+
+        .paper {
+            background-color: var(--paper-bg);
+            width: 100%;
+            max-width: 650px;
+            padding: 40px 30px;
+            box-shadow: 
+                2px 2px 10px rgba(0,0,0,0.1), 
+                0 0 40px rgba(0,0,0,0.05) inset;
+            position: relative;
+            transform: rotate(-0.5deg);
+            color: var(--ink-color);
+            border-radius: 2px;
+            /* Notebook lines effect */
+            background-image: linear-gradient(var(--line-color) 1px, transparent 1px);
+            background-size: 100% 2.2rem;
+            line-height: 2.2rem;
+        }
+
+        .paper::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 40px;
+            height: 100%;
+            width: 1px;
+            background: rgba(255, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin: 0 0 30px 0;
+            text-decoration: underline;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .lyrics {
+            font-size: clamp(1.3rem, 5vw, 1.9rem);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 40px;
+        }
+
+        .signature {
+            margin-top: 30px;
+            text-align: right;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            font-weight: 500;
+            transform: rotate(-2deg);
+        }
+
+        /* iPhone specific adjustments */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px 10px;
+            }
+            .paper {
+                padding: 30px 20px 30px 45px;
+                transform: none; /* Remove rotation on very small screens to save space */
+                background-size: 100% 1.8rem;
+                line-height: 1.8rem;
+            }
+            .paper::after {
+                left: 35px;
+            }
+            .lyrics {
+                line-height: 1.8rem;
+            }
+        }
+
+        /* Handle notch and safe areas for modern iPhones */
+        @supports (padding: env(safe-area-inset-bottom)) {
+            body {
+                padding-bottom: calc(20px + env(safe-area-inset-bottom));
+                padding-left: calc(15px + env(safe-area-inset-left));
+                padding-right: calc(15px + env(safe-area-inset-right));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="paper">
+        <h1>Vita Spericolata</h1>
+        
+        <div class="lyrics">Voglio una vita maleducata
+Di quelle vite fatte, fatte così
+Voglio una vita che se ne frega
+Che se ne frega di tutto sì
+
+Voglio una vita che non è mai tardi
+Di quelle che non dormi mai
+Voglio una vita di quelle che non si sa mai
+
+E poi ci troveremo come star
+A bere del whisky al Roxy Bar
+O forse non ci incontreremo mai
+Ognuno a rincorrere i suoi guai
+
+Voglio una vita spericolata
+Voglio una vita come quelle dei film
+Voglio una vita esagerata
+Voglio una vita come quelle dei film
+Voglio una vita che non è mai tardi
+Di quelle che non dormi mai
+Voglio una vita, la voglio piena di guai
+
+E poi ci troveremo come star
+A bere del whisky al Roxy Bar
+O forse non ci incontreremo mai
+Ognuno a rincorrere i suoi guai
+
+Voglio una vita maleducata
+Di quelle vite fatte, fatte così
+Voglio una vita che se ne frega
+Che se ne frega di tutto sì
+
+Voglio una vita spericolata
+Voglio una vita come quelle dei film
+Voglio una vita esagerata
+Voglio una vita come quelle dei film</div>
+
+        <div class="signature">
+            Vasco
+        </div>
+    </div>
+
+</body>
+</html>
